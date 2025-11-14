@@ -43,24 +43,18 @@ jobs:
         with:
           node-version: '18'
 
-      # 5. bruno-api-typescript 설치
-      - name: Install bruno-api-typescript
-        run: |
-          cd frontend-repo
-          npm install -D github:manNomi/bruno-api-typescript
-        env:
-          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
-
-      # 6. React Query 훅 생성
+      # 5. React Query 훅 생성
       - name: Generate React Query Hooks
         run: |
           cd frontend-repo
-          npx bruno-api generate-hooks \
+          npx github:manNomi/bruno-api-typescript generate-hooks \
             -i ../bruno-repo/bruno \
             -o ./src/apis \
             --axios-path "@/utils/axiosInstance"
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
 
-      # 7. 변경사항 확인
+      # 6. 변경사항 확인
       - name: Check for changes
         id: git-check
         run: |
@@ -73,7 +67,7 @@ jobs:
             echo "ℹ️ No changes"
           fi
 
-      # 8. 브랜치 생성 및 커밋
+      # 7. 브랜치 생성 및 커밋
       - name: Commit and Push Changes
         if: steps.git-check.outputs.has_changes == 'true'
         run: |
@@ -102,7 +96,7 @@ jobs:
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
         id: commit
 
-      # 9. PR 생성
+      # 8. PR 생성
       - name: Create Pull Request
         if: steps.git-check.outputs.has_changes == 'true'
         working-directory: frontend-repo
@@ -138,7 +132,7 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.generate-token.outputs.token }}
 
-      # 10. 결과 요약
+      # 9. 결과 요약
       - name: Summary
         run: |
           echo "## 🎉 Workflow Completed" >> $GITHUB_STEP_SUMMARY
