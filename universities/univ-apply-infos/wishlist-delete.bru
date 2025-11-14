@@ -1,0 +1,23 @@
+meta {
+  name: 위시 학교 삭제
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{baseUrl}}/universities/apply-infos/wishlist/1
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "message": "위시리스트에서 삭제되었습니다."
+  }
+  ```
+}

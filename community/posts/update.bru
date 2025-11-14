@@ -1,0 +1,40 @@
+meta {
+  name: 게시글 수정
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/community/posts/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "title": "수정된 제목",
+    "content": "수정된 내용",
+    "images": [
+      "https://example.com/image2.jpg"
+    ]
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "title": "수정된 제목",
+    "content": "수정된 내용",
+    "images": [
+      "https://example.com/image2.jpg"
+    ],
+    "updatedAt": "2025-11-14T01:00:00Z",
+    "message": "게시글이 수정되었습니다."
+  }
+  ```
+}

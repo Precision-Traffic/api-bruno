@@ -1,0 +1,25 @@
+meta {
+  name: 소식지 좋아요 삭제
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/newsletters/1/like
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "newsletterId": 1,
+    "likeCount": 25,
+    "message": "좋아요가 삭제되었습니다."
+  }
+  ```
+}

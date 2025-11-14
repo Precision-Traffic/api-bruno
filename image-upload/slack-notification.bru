@@ -1,0 +1,32 @@
+meta {
+  name: 슬랙 알림
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/upload/slack-notification
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "message": "새로운 지원서가 제출되었습니다",
+    "channel": "#applications",
+    "priority": "high"
+  }
+}
+
+docs {
+  ```json
+  {
+    "message": "슬랙 알림이 전송되었습니다.",
+    "sentAt": "2025-11-14T00:00:00Z"
+  }
+  ```
+}

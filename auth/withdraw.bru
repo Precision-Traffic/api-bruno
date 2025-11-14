@@ -1,0 +1,31 @@
+meta {
+  name: 회원 탈퇴
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{baseUrl}}/auth/withdraw
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "reason": "서비스 이용이 불편해서",
+    "password": "password123!"
+  }
+}
+
+docs {
+  ```json
+  {
+    "message": "회원 탈퇴가 완료되었습니다.",
+    "withdrawnAt": "2025-11-14T00:00:00Z"
+  }
+  ```
+}

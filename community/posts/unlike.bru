@@ -1,0 +1,25 @@
+meta {
+  name: 게시글 좋아요 삭제
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{baseUrl}}/community/posts/1/like
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "postId": 1,
+    "likeCount": 10,
+    "message": "좋아요가 취소되었습니다."
+  }
+  ```
+}

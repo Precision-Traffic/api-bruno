@@ -1,0 +1,42 @@
+meta {
+  name: 게시판 조회
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/community/boards/1
+  body: none
+  auth: none
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "name": "자유게시판",
+    "description": "자유롭게 이야기를 나누는 공간",
+    "postCount": 1234,
+    "icon": "🗣️",
+    "posts": [
+      {
+        "id": 1,
+        "title": "안녕하세요",
+        "content": "처음 가입했습니다",
+        "author": {
+          "id": 1,
+          "nickname": "닉네임",
+          "profileImage": "https://example.com/profile.jpg"
+        },
+        "likeCount": 10,
+        "commentCount": 5,
+        "viewCount": 100,
+        "createdAt": "2025-11-14T00:00:00Z"
+      }
+    ],
+    "page": 1,
+    "pageSize": 20,
+    "totalPosts": 1234
+  }
+  ```
+}

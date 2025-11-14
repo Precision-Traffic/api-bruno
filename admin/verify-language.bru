@@ -1,0 +1,36 @@
+meta {
+  name: 어학 검증 및 수정
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/admin/grades/language/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "status": "verified",
+    "score": 7.0,
+    "adminNote": "검증 완료"
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "status": "verified",
+    "score": 7.0,
+    "adminNote": "검증 완료",
+    "verifiedAt": "2025-11-14T00:00:00Z",
+    "message": "어학 성적이 검증되었습니다."
+  }
+  ```
+}

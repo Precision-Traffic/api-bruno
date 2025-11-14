@@ -1,0 +1,40 @@
+meta {
+  name: 채팅방 목록 조회
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/chat/rooms
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "rooms": [
+      {
+        "id": 1,
+        "partner": {
+          "id": 2,
+          "nickname": "상대방닉네임",
+          "profileImage": "https://example.com/profile.jpg"
+        },
+        "lastMessage": {
+          "id": 100,
+          "content": "마지막 메시지",
+          "createdAt": "2025-11-14T00:00:00Z"
+        },
+        "unreadCount": 3,
+        "updatedAt": "2025-11-14T00:00:00Z"
+      }
+    ],
+    "total": 1
+  }
+  ```
+}

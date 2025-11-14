@@ -1,0 +1,42 @@
+meta {
+  name: 나의 멘토 페이지 수정
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/mentors/my-profile
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "university": "데겐도르프 공과대학",
+    "major": "Computer Science",
+    "introduction": "수정된 소개",
+    "experience": "4년차 재학생",
+    "detailedInfo": "수정된 상세 소개...",
+    "availableSlots": 3
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "university": "데겐도르프 공과대학",
+    "major": "Computer Science",
+    "introduction": "수정된 소개",
+    "experience": "4년차 재학생",
+    "detailedInfo": "수정된 상세 소개...",
+    "availableSlots": 3,
+    "updatedAt": "2025-11-14T00:00:00Z",
+    "message": "멘토 프로필이 수정되었습니다."
+  }
+  ```
+}

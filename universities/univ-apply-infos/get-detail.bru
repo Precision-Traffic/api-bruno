@@ -1,0 +1,44 @@
+meta {
+  name: 학교 상세 정보 조회
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/universities/apply-infos/1
+  body: none
+  auth: none
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "universityId": 1,
+    "koreanName": "데겐도르프 공과대학",
+    "englishName": "Deggendorf Institute of Technology",
+    "region": "europe",
+    "country": "germany",
+    "city": "Deggendorf",
+    "logo": "https://example.com/logo.jpg",
+    "description": "독일의 명문 공과대학교입니다.",
+    "tuitionFee": 0,
+    "applicationDeadline": "2025-07-15T23:59:59Z",
+    "requiredGpa": 3.5,
+    "requiredLanguageScore": {
+      "type": "IELTS",
+      "minimumScore": 6.5
+    },
+    "majors": [
+      "Computer Science",
+      "Mechanical Engineering",
+      "Business Administration"
+    ],
+    "studentCapacity": 150,
+    "currentApplicants": 120,
+    "competitionRate": 0.8,
+    "averageGpa": 4.2,
+    "website": "https://www.th-deg.de"
+  }
+  ```
+}

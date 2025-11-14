@@ -1,0 +1,37 @@
+meta {
+  name: 소식지 추가
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/newsletters
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "title": "2025년 11월 소식지",
+    "content": "이번 달 소식을 전합니다...",
+    "thumbnailImage": "https://example.com/thumbnail.jpg"
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "title": "2025년 11월 소식지",
+    "content": "이번 달 소식을 전합니다...",
+    "thumbnailImage": "https://example.com/thumbnail.jpg",
+    "authorId": 1,
+    "publishedAt": "2025-11-14T00:00:00Z",
+    "message": "소식지가 추가되었습니다."
+  }
+  ```
+}

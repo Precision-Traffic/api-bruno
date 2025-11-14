@@ -1,0 +1,42 @@
+meta {
+  name: 멘토 상세 페이지
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/mentors/1
+  body: none
+  auth: none
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "userId": 5,
+    "user": {
+      "id": 5,
+      "nickname": "멘토닉네임",
+      "profileImage": "https://example.com/mentor-profile.jpg"
+    },
+    "university": "데겐도르프 공과대학",
+    "major": "Computer Science",
+    "introduction": "안녕하세요, 멘토입니다",
+    "experience": "3년차 재학생",
+    "detailedInfo": "상세한 멘토 소개...",
+    "availableSlots": 5,
+    "rating": 4.8,
+    "reviewCount": 12,
+    "reviews": [
+      {
+        "id": 1,
+        "menteeNickname": "멘티1",
+        "rating": 5,
+        "comment": "정말 도움이 되었습니다!",
+        "createdAt": "2025-11-10T00:00:00Z"
+      }
+    ]
+  }
+  ```
+}

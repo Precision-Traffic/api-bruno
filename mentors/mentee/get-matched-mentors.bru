@@ -1,0 +1,39 @@
+meta {
+  name: 매칭된 멘토 목록
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/mentors/matched
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "matchedMentors": [
+      {
+        "id": 1,
+        "mentor": {
+          "id": 1,
+          "user": {
+            "id": 5,
+            "nickname": "멘토닉네임",
+            "profileImage": "https://example.com/mentor-profile.jpg"
+          },
+          "university": "데겐도르프 공과대학",
+          "major": "Computer Science"
+        },
+        "matchedAt": "2025-11-14T01:00:00Z"
+      }
+    ],
+    "total": 1
+  }
+  ```
+}

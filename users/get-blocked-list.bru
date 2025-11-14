@@ -1,0 +1,35 @@
+meta {
+  name: 차단한 유저 목록 조회
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/users/blocked
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "blockedUsers": [
+      {
+        "id": 1,
+        "targetUser": {
+          "id": 2,
+          "nickname": "차단된유저",
+          "profileImage": "https://example.com/profile.jpg"
+        },
+        "reason": "스팸 게시글",
+        "blockedAt": "2025-11-14T00:00:00Z"
+      }
+    ],
+    "total": 1
+  }
+  ```
+}

@@ -1,0 +1,35 @@
+meta {
+  name: 카카오 인증 (로그인 or 가입 코드 발급)
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/auth/kakao
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "accessToken": "kakao_access_token_here"
+  }
+}
+
+docs {
+  ```json
+  {
+    "isNewUser": false,
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "user": {
+      "id": 1,
+      "email": "user@kakao.com",
+      "nickname": "카카오유저",
+      "profileImage": "https://kakao.com/profile.jpg",
+      "provider": "kakao"
+    },
+    "signupCode": null
+  }
+  ```
+}

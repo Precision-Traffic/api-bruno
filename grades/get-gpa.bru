@@ -1,0 +1,32 @@
+meta {
+  name: 학점 조회
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/grades/gpa
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "userId": 1,
+    "university": "서울대학교",
+    "major": "컴퓨터공학",
+    "gpa": 4.0,
+    "totalGpa": 4.5,
+    "transcriptUrl": "https://example.com/transcript.pdf",
+    "status": "verified",
+    "verifiedAt": "2025-11-14T01:00:00Z",
+    "createdAt": "2025-11-14T00:00:00Z"
+  }
+  ```
+}

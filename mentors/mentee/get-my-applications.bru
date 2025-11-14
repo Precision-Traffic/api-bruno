@@ -1,0 +1,41 @@
+meta {
+  name: 신청한 멘토링 목록
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/mentors/my-applications
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "applications": [
+      {
+        "id": 1,
+        "mentorId": 1,
+        "mentor": {
+          "id": 1,
+          "user": {
+            "nickname": "멘토닉네임",
+            "profileImage": "https://example.com/mentor-profile.jpg"
+          },
+          "university": "데겐도르프 공과대학"
+        },
+        "message": "멘토링을 받고 싶습니다",
+        "status": "accepted",
+        "requestedAt": "2025-11-14T00:00:00Z",
+        "respondedAt": "2025-11-14T01:00:00Z"
+      }
+    ],
+    "total": 1
+  }
+  ```
+}

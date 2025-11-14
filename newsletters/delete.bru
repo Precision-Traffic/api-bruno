@@ -1,0 +1,23 @@
+meta {
+  name: 소식지 삭제
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/newsletters/1
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "message": "소식지가 삭제되었습니다."
+  }
+  ```
+}

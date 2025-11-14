@@ -1,0 +1,28 @@
+meta {
+  name: 학적 성적표 업로드
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/upload/transcript
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file(transcript.pdf)
+}
+
+docs {
+  ```json
+  {
+    "url": "https://cdn.example.com/documents/transcript-user1-20251114.pdf",
+    "message": "성적표가 업로드되었습니다."
+  }
+  ```
+}

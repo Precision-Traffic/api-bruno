@@ -1,0 +1,28 @@
+meta {
+  name: 프로필 사진 업로드 (가입 후)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/upload/profile
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file(profile.jpg)
+}
+
+docs {
+  ```json
+  {
+    "url": "https://cdn.example.com/profiles/user-1-profile.jpg",
+    "message": "프로필 사진이 업로드되었습니다."
+  }
+  ```
+}

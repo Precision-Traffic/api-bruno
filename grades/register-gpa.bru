@@ -1,0 +1,42 @@
+meta {
+  name: 학점 등록
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/grades/gpa
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "university": "서울대학교",
+    "major": "컴퓨터공학",
+    "gpa": 4.0,
+    "totalGpa": 4.5,
+    "transcriptUrl": "https://example.com/transcript.pdf"
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "userId": 1,
+    "university": "서울대학교",
+    "major": "컴퓨터공학",
+    "gpa": 4.0,
+    "totalGpa": 4.5,
+    "transcriptUrl": "https://example.com/transcript.pdf",
+    "status": "pending",
+    "createdAt": "2025-11-14T00:00:00Z",
+    "message": "학점이 등록되었습니다. 검증 중입니다."
+  }
+  ```
+}

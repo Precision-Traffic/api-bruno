@@ -1,0 +1,44 @@
+meta {
+  name: 지원서 제출
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/applications
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "universityId": 1,
+    "choice": "first",
+    "major": "Computer Science",
+    "personalStatement": "저는 컴퓨터 과학에 대한 열정이 있습니다...",
+    "documents": [
+      "transcript.pdf",
+      "recommendation.pdf"
+    ]
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "userId": 1,
+    "universityId": 1,
+    "universityName": "데겐도르프 공과대학",
+    "choice": "first",
+    "major": "Computer Science",
+    "status": "pending",
+    "submittedAt": "2025-11-14T00:00:00Z",
+    "message": "지원서가 성공적으로 제출되었습니다."
+  }
+  ```
+}

@@ -1,0 +1,30 @@
+meta {
+  name: 사용자 id 목록 조회
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://kapi.kakao.com/v1/user/ids
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: KakaoAK {{adminKey}}
+  Content-Type: application/x-www-form-urlencoded
+}
+
+docs {
+  ```json
+  {
+    "elements": [
+      123456789,
+      987654321
+    ],
+    "total_count": 2,
+    "before_url": "",
+    "after_url": ""
+  }
+  ```
+}

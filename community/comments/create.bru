@@ -1,0 +1,41 @@
+meta {
+  name: 댓글 작성
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/community/comments
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "postId": 1,
+    "content": "댓글 내용입니다",
+    "parentCommentId": null
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "postId": 1,
+    "content": "댓글 내용입니다",
+    "author": {
+      "id": 1,
+      "nickname": "닉네임",
+      "profileImage": "https://example.com/profile.jpg"
+    },
+    "parentCommentId": null,
+    "createdAt": "2025-11-14T00:00:00Z",
+    "message": "댓글이 작성되었습니다."
+  }
+  ```
+}

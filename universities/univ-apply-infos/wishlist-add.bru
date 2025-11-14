@@ -1,0 +1,33 @@
+meta {
+  name: 위시 학교 추가
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/universities/apply-infos/wishlist
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "universityId": 1
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "universityId": 1,
+    "userId": 1,
+    "addedAt": "2025-11-14T00:00:00Z",
+    "message": "위시리스트에 추가되었습니다."
+  }
+  ```
+}

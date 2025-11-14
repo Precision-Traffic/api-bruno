@@ -1,0 +1,40 @@
+meta {
+  name: 어학 성적 등록
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/grades/language
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "type": "IELTS",
+    "score": 7.0,
+    "testDate": "2025-01-15T00:00:00Z",
+    "certificateUrl": "https://example.com/certificate.pdf"
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "userId": 1,
+    "type": "IELTS",
+    "score": 7.0,
+    "testDate": "2025-01-15T00:00:00Z",
+    "certificateUrl": "https://example.com/certificate.pdf",
+    "status": "pending",
+    "createdAt": "2025-11-14T00:00:00Z",
+    "message": "어학 성적이 등록되었습니다. 검증 중입니다."
+  }
+  ```
+}

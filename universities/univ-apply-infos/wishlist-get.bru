@@ -1,0 +1,35 @@
+meta {
+  name: 위시 학교 목록 조회
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/universities/apply-infos/wishlist
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "wishlist": [
+      {
+        "id": 1,
+        "universityId": 1,
+        "koreanName": "데겐도르프 공과대학",
+        "englishName": "Deggendorf Institute of Technology",
+        "region": "europe",
+        "country": "germany",
+        "logo": "https://example.com/logo.jpg",
+        "addedAt": "2025-11-01T00:00:00Z"
+      }
+    ],
+    "total": 1
+  }
+  ```
+}

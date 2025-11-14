@@ -1,0 +1,48 @@
+meta {
+  name: 권역-국가에 해당하는 전체 대학
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/universities?region=europe&country=germany
+  body: none
+  auth: none
+}
+
+params:query {
+  region: europe
+  country: germany
+}
+
+docs {
+  ```json
+  {
+    "universities": [
+      {
+        "id": 1,
+        "koreanName": "데겐도르프 공과대학",
+        "englishName": "Deggendorf Institute of Technology",
+        "region": "europe",
+        "country": "germany",
+        "city": "Deggendorf",
+        "logo": "https://example.com/logo.jpg",
+        "establishedYear": 1994,
+        "studentCount": 8000
+      },
+      {
+        "id": 2,
+        "koreanName": "뮌헨 공과대학",
+        "englishName": "Technical University of Munich",
+        "region": "europe",
+        "country": "germany",
+        "city": "Munich",
+        "logo": "https://example.com/tum-logo.jpg",
+        "establishedYear": 1868,
+        "studentCount": 45000
+      }
+    ],
+    "total": 2
+  }
+  ```
+}

@@ -1,0 +1,36 @@
+meta {
+  name: 어학 성적 조회
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/grades/language
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "languageScores": [
+      {
+        "id": 1,
+        "userId": 1,
+        "type": "IELTS",
+        "score": 7.0,
+        "testDate": "2025-01-15T00:00:00Z",
+        "certificateUrl": "https://example.com/certificate.pdf",
+        "status": "verified",
+        "verifiedAt": "2025-11-14T01:00:00Z",
+        "createdAt": "2025-11-14T00:00:00Z"
+      }
+    ],
+    "total": 1
+  }
+  ```
+}

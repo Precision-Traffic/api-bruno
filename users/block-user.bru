@@ -1,0 +1,35 @@
+meta {
+  name: 유저 차단
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/users/block
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "targetUserId": 2,
+    "reason": "스팸 게시글"
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "userId": 1,
+    "targetUserId": 2,
+    "reason": "스팸 게시글",
+    "blockedAt": "2025-11-14T00:00:00Z",
+    "message": "사용자가 차단되었습니다."
+  }
+  ```
+}

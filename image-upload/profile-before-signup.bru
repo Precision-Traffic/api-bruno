@@ -1,0 +1,26 @@
+meta {
+  name: 프로필 사진 업로드 (가입 전)
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/upload/profile/temp
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  file: @file(profile.jpg)
+}
+
+docs {
+  ```json
+  {
+    "url": "https://cdn.example.com/temp/profile-abc123.jpg",
+    "tempId": "abc123",
+    "expiresAt": "2025-11-14T01:00:00Z",
+    "message": "임시 프로필 사진이 업로드되었습니다."
+  }
+  ```
+}

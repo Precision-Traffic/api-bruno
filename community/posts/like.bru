@@ -1,0 +1,25 @@
+meta {
+  name: 게시글 좋아요 등록
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/community/posts/1/like
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "postId": 1,
+    "likeCount": 11,
+    "message": "좋아요가 등록되었습니다."
+  }
+  ```
+}

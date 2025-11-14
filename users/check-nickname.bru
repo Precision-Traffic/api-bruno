@@ -1,0 +1,25 @@
+meta {
+  name: 닉네임 중복 검증
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/users/check-nickname?nickname=테스트닉네임
+  body: none
+  auth: none
+}
+
+params:query {
+  nickname: 테스트닉네임
+}
+
+docs {
+  ```json
+  {
+    "nickname": "테스트닉네임",
+    "isAvailable": true,
+    "message": "사용 가능한 닉네임입니다."
+  }
+  ```
+}

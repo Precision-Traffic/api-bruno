@@ -1,0 +1,42 @@
+meta {
+  name: 내 정보 수정
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/mypage/profile
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "nickname": "새닉네임",
+    "bio": "새로운 소개",
+    "phoneNumber": "010-9876-5432",
+    "university": "연세대학교",
+    "major": "전자공학"
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "email": "user@example.com",
+    "nickname": "새닉네임",
+    "profileImage": "https://example.com/profile.jpg",
+    "bio": "새로운 소개",
+    "phoneNumber": "010-9876-5432",
+    "university": "연세대학교",
+    "major": "전자공학",
+    "updatedAt": "2025-11-14T00:00:00Z",
+    "message": "프로필이 수정되었습니다."
+  }
+  ```
+}

@@ -1,0 +1,37 @@
+meta {
+  name: 신청받은 멘토링 목록
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/mentors/requests
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "requests": [
+      {
+        "id": 1,
+        "menteeId": 3,
+        "mentee": {
+          "id": 3,
+          "nickname": "멘티닉네임",
+          "profileImage": "https://example.com/profile.jpg"
+        },
+        "message": "멘토링을 받고 싶습니다",
+        "status": "pending",
+        "requestedAt": "2025-11-14T00:00:00Z"
+      }
+    ],
+    "total": 1
+  }
+  ```
+}

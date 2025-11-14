@@ -1,0 +1,30 @@
+meta {
+  name: 채팅방 파트너 조회
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/chat/rooms/1/partner
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "roomId": 1,
+    "partner": {
+      "id": 2,
+      "nickname": "상대방닉네임",
+      "profileImage": "https://example.com/profile.jpg",
+      "university": "데겐도르프 공과대학",
+      "major": "Computer Science"
+    }
+  }
+  ```
+}

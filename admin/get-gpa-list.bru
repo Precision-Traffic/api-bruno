@@ -1,0 +1,47 @@
+meta {
+  name: 학점 조회
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/admin/grades/gpa?status=pending
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+params:query {
+  status: pending
+}
+
+docs {
+  ```json
+  {
+    "grades": [
+      {
+        "id": 1,
+        "userId": 1,
+        "user": {
+          "id": 1,
+          "nickname": "닉네임",
+          "email": "user@example.com"
+        },
+        "university": "서울대학교",
+        "major": "컴퓨터공학",
+        "gpa": 4.0,
+        "totalGpa": 4.5,
+        "transcriptUrl": "https://example.com/transcript.pdf",
+        "status": "pending",
+        "createdAt": "2025-11-14T00:00:00Z"
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "pageSize": 20
+  }
+  ```
+}

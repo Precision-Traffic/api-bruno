@@ -1,0 +1,37 @@
+meta {
+  name: 지원자 현황 조회
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/applications/competitors?universityId=1
+  body: none
+  auth: none
+}
+
+params:query {
+  universityId: 1
+}
+
+docs {
+  ```json
+  {
+    "universityId": 1,
+    "universityName": "데겐도르프 공과대학",
+    "firstChoice": [
+      {
+        "universityId": 1,
+        "universityName": "데겐도르프 공과대학",
+        "studentCapacity": 150,
+        "applicantCount": 120,
+        "competitionRate": 0.8,
+        "averageGpa": 4.2,
+        "averageLanguageScore": 6.8
+      }
+    ],
+    "secondChoice": [],
+    "thirdChoice": []
+  }
+  ```
+}

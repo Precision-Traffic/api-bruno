@@ -1,0 +1,37 @@
+meta {
+  name: 게시판 목록 조회
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/community/boards
+  body: none
+  auth: none
+}
+
+docs {
+  ```json
+  {
+    "boards": [
+      {
+        "id": 1,
+        "name": "자유게시판",
+        "description": "자유롭게 이야기를 나누는 공간",
+        "postCount": 1234,
+        "icon": "🗣️",
+        "createdAt": "2025-01-01T00:00:00Z"
+      },
+      {
+        "id": 2,
+        "name": "질문게시판",
+        "description": "궁금한 점을 질문하는 공간",
+        "postCount": 567,
+        "icon": "❓",
+        "createdAt": "2025-01-01T00:00:00Z"
+      }
+    ],
+    "total": 2
+  }
+  ```
+}

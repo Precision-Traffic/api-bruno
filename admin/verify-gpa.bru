@@ -1,0 +1,38 @@
+meta {
+  name: 학점 검증 및 수정
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{baseUrl}}/admin/grades/gpa/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "status": "verified",
+    "gpa": 4.0,
+    "totalGpa": 4.5,
+    "adminNote": "검증 완료"
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "status": "verified",
+    "gpa": 4.0,
+    "totalGpa": 4.5,
+    "adminNote": "검증 완료",
+    "verifiedAt": "2025-11-14T00:00:00Z",
+    "message": "학점이 검증되었습니다."
+  }
+  ```
+}

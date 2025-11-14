@@ -1,0 +1,34 @@
+meta {
+  name: 소식지 수정
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/newsletters/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "title": "수정된 소식지 제목",
+    "content": "수정된 내용..."
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "title": "수정된 소식지 제목",
+    "content": "수정된 내용...",
+    "updatedAt": "2025-11-14T01:00:00Z",
+    "message": "소식지가 수정되었습니다."
+  }
+  ```
+}

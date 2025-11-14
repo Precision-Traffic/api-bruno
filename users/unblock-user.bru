@@ -1,0 +1,23 @@
+meta {
+  name: 유저 차단 취소
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{baseUrl}}/users/block/2
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "message": "차단이 해제되었습니다."
+  }
+  ```
+}

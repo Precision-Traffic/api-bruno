@@ -1,0 +1,50 @@
+meta {
+  name: 게시글 작성
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/community/posts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "boardId": 1,
+    "title": "제목입니다",
+    "content": "내용입니다",
+    "images": [
+      "https://example.com/image1.jpg"
+    ]
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "boardId": 1,
+    "title": "제목입니다",
+    "content": "내용입니다",
+    "images": [
+      "https://example.com/image1.jpg"
+    ],
+    "author": {
+      "id": 1,
+      "nickname": "닉네임",
+      "profileImage": "https://example.com/profile.jpg"
+    },
+    "likeCount": 0,
+    "commentCount": 0,
+    "viewCount": 0,
+    "createdAt": "2025-11-14T00:00:00Z",
+    "message": "게시글이 작성되었습니다."
+  }
+  ```
+}

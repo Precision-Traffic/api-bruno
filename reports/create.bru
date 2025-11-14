@@ -1,0 +1,40 @@
+meta {
+  name: 신고하기
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/reports
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "targetType": "post",
+    "targetId": 1,
+    "reason": "스팸",
+    "description": "홍보성 게시글입니다"
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "reporterId": 1,
+    "targetType": "post",
+    "targetId": 1,
+    "reason": "스팸",
+    "description": "홍보성 게시글입니다",
+    "status": "pending",
+    "createdAt": "2025-11-14T00:00:00Z",
+    "message": "신고가 접수되었습니다."
+  }
+  ```
+}

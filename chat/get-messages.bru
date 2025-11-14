@@ -1,0 +1,43 @@
+meta {
+  name: 채팅 내역 조회
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/chat/rooms/1/messages
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "messages": [
+      {
+        "id": 1,
+        "roomId": 1,
+        "senderId": 1,
+        "content": "안녕하세요",
+        "isRead": true,
+        "createdAt": "2025-11-14T00:00:00Z"
+      },
+      {
+        "id": 2,
+        "roomId": 1,
+        "senderId": 2,
+        "content": "네 안녕하세요",
+        "isRead": true,
+        "createdAt": "2025-11-14T00:01:00Z"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "pageSize": 50
+  }
+  ```
+}

@@ -1,0 +1,36 @@
+meta {
+  name: 멘토링 신청
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/mentors/apply
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "mentorId": 1,
+    "message": "멘토링을 받고 싶습니다"
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "mentorId": 1,
+    "menteeId": 3,
+    "message": "멘토링을 받고 싶습니다",
+    "status": "pending",
+    "requestedAt": "2025-11-14T00:00:00Z",
+    "message": "멘토링이 신청되었습니다."
+  }
+  ```
+}

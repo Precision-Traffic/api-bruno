@@ -1,0 +1,28 @@
+meta {
+  name: 어학 성적표 업로드
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/upload/language-certificate
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:multipart-form {
+  file: @file(ielts-certificate.pdf)
+}
+
+docs {
+  ```json
+  {
+    "url": "https://cdn.example.com/documents/language-user1-20251114.pdf",
+    "message": "어학 성적표가 업로드되었습니다."
+  }
+  ```
+}

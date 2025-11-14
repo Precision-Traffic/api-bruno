@@ -1,0 +1,33 @@
+meta {
+  name: 나의 멘토 페이지 조회
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/mentors/my-profile
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "userId": 5,
+    "university": "데겐도르프 공과대학",
+    "major": "Computer Science",
+    "introduction": "안녕하세요, 멘토입니다",
+    "experience": "3년차 재학생",
+    "detailedInfo": "상세한 멘토 소개...",
+    "availableSlots": 5,
+    "rating": 4.8,
+    "reviewCount": 12,
+    "totalMentees": 7
+  }
+  ```
+}

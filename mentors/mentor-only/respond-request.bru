@@ -1,0 +1,34 @@
+meta {
+  name: 멘토링 수락-거절
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/mentors/requests/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "status": "accepted",
+    "responseMessage": "수락합니다"
+  }
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "status": "accepted",
+    "responseMessage": "수락합니다",
+    "respondedAt": "2025-11-14T00:00:00Z",
+    "message": "멘토링 요청이 수락되었습니다."
+  }
+  ```
+}

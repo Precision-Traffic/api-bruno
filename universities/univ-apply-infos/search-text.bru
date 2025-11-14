@@ -1,0 +1,37 @@
+meta {
+  name: 학교 텍스트 검색
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/universities/apply-infos/search?keyword=데겐도르프
+  body: none
+  auth: none
+}
+
+params:query {
+  keyword: 데겐도르프
+}
+
+docs {
+  ```json
+  {
+    "results": [
+      {
+        "id": 1,
+        "universityId": 1,
+        "koreanName": "데겐도르프 공과대학",
+        "englishName": "Deggendorf Institute of Technology",
+        "region": "europe",
+        "country": "germany",
+        "city": "Deggendorf",
+        "logo": "https://example.com/logo.jpg",
+        "competitionRate": 0.8,
+        "averageGpa": 4.2
+      }
+    ],
+    "total": 1
+  }
+  ```
+}

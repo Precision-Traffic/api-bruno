@@ -1,0 +1,49 @@
+meta {
+  name: 학교 필터 검색
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/universities/apply-infos/filter
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "region": "europe",
+    "country": "germany",
+    "minGpa": 3.0,
+    "maxGpa": 4.5,
+    "tuitionFeeMax": 10000,
+    "majors": ["Computer Science"],
+    "languageTests": ["IELTS", "TOEFL"]
+  }
+}
+
+docs {
+  ```json
+  {
+    "results": [
+      {
+        "id": 1,
+        "universityId": 1,
+        "koreanName": "데겐도르프 공과대학",
+        "englishName": "Deggendorf Institute of Technology",
+        "region": "europe",
+        "country": "germany",
+        "city": "Deggendorf",
+        "logo": "https://example.com/logo.jpg",
+        "requiredGpa": 3.5,
+        "tuitionFee": 0,
+        "majors": ["Computer Science", "Mechanical Engineering"],
+        "competitionRate": 0.8
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "pageSize": 20
+  }
+  ```
+}

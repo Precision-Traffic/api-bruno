@@ -1,0 +1,36 @@
+meta {
+  name: 애플 인증 (로그인 or 가입 코드 발급)
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{baseUrl}}/auth/apple
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "identityToken": "apple_identity_token_here",
+    "authorizationCode": "apple_authorization_code_here"
+  }
+}
+
+docs {
+  ```json
+  {
+    "isNewUser": false,
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "user": {
+      "id": 2,
+      "email": "user@privaterelay.appleid.com",
+      "nickname": "애플유저",
+      "profileImage": "https://example.com/default-profile.jpg",
+      "provider": "apple"
+    },
+    "signupCode": null
+  }
+  ```
+}

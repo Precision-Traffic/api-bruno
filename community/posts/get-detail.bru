@@ -1,0 +1,37 @@
+meta {
+  name: 게시글 조회
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/community/posts/1
+  body: none
+  auth: none
+}
+
+docs {
+  ```json
+  {
+    "id": 1,
+    "boardId": 1,
+    "boardName": "자유게시판",
+    "title": "제목입니다",
+    "content": "내용입니다",
+    "images": [
+      "https://example.com/image1.jpg"
+    ],
+    "author": {
+      "id": 1,
+      "nickname": "닉네임",
+      "profileImage": "https://example.com/profile.jpg"
+    },
+    "likeCount": 10,
+    "isLiked": false,
+    "commentCount": 5,
+    "viewCount": 100,
+    "createdAt": "2025-11-14T00:00:00Z",
+    "updatedAt": "2025-11-14T00:00:00Z"
+  }
+  ```
+}

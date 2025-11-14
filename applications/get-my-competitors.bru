@@ -1,0 +1,44 @@
+meta {
+  name: 나의 지원과 동일한 지원자 현황 조회
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/applications/my-competitors
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "myApplications": [
+      {
+        "universityId": 1,
+        "universityName": "데겐도르프 공과대학",
+        "choice": "first",
+        "major": "Computer Science",
+        "myGpa": 4.0,
+        "myLanguageScore": 7.0
+      }
+    ],
+    "competitors": {
+      "first": {
+        "universityId": 1,
+        "studentCapacity": 150,
+        "applicantCount": 120,
+        "competitionRate": 0.8,
+        "averageGpa": 4.2,
+        "myRank": 45
+      },
+      "second": null,
+      "third": null
+    }
+  }
+  ```
+}

@@ -1,0 +1,24 @@
+meta {
+  name: 위시 학교인지 조회
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/universities/apply-infos/1/wishlist
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  ```json
+  {
+    "universityId": 1,
+    "isWishlisted": true
+  }
+  ```
+}
