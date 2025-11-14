@@ -5,7 +5,8 @@ on:
     branches:
       - main  # main 브랜치 푸시 시
     paths:
-      - '**.bru'  # .bru 파일 변경 시만
+      - '**.bru'  # .bru 파일 변경 시
+      - '.github/workflows/sync-to-frontend.yml'  # 워크플로우 파일 변경 시
   workflow_dispatch:  # 수동 실행 가능
 
 jobs:
