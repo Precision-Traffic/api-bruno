@@ -21,7 +21,7 @@ jobs:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
           owner: Precision-Traffic  # ⚠️ 여기를 본인 GitHub 사용자명으로 변경
-          repositories: "api-bruno,YOUR_FRONTEND_REPO_NAME"  # ⚠️ 실제 리포 이름으로 변경
+          repositories: "api-bruno,BUS-LIVE-WEB"
 
       # 2. Bruno 리포 체크아웃
       - name: Checkout Bruno Repo
@@ -33,7 +33,7 @@ jobs:
       - name: Checkout Frontend Repo
         uses: actions/checkout@v4
         with:
-          repository: Precision-Traffic/YOUR_FRONTEND_REPO_NAME  # ⚠️ 실제 리포 경로로 변경
+          repository: Precision-Traffic/BUS-LIVE-WEB
           token: ${{ steps.generate-token.outputs.token }}
           path: frontend-repo
 
