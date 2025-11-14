@@ -43,12 +43,30 @@ jobs:
         with:
           node-version: '18'
 
+      # 4.5. 디버그 - 디렉토리 구조 확인
+      - name: Debug - List directories
+        run: |
+          echo "=== Current directory ==="
+          pwd
+          echo ""
+          echo "=== Root structure ==="
+          ls -la
+          echo ""
+          echo "=== bruno-repo structure ==="
+          ls -la bruno-repo/ || echo "bruno-repo not found"
+          echo ""
+          echo "=== bruno-repo/bruno structure (old path) ==="
+          ls -la bruno-repo/bruno/ || echo "bruno-repo/bruno not found"
+          echo ""
+          echo "=== Check for bruno.json ==="
+          find bruno-repo -name "bruno.json" -type f 2>/dev/null || echo "bruno.json not found"
+
       # 5. React Query 훅 생성
       - name: Generate React Query Hooks
         run: |
           cd frontend-repo
           npx github:manNomi/bruno-api-typescript generate-hooks \
-            -i ../bruno-repo/bruno \
+            -i ../bruno-repo \
             -o ./src/apis \
             --axios-path "@/utils/axiosInstance"
         env:
